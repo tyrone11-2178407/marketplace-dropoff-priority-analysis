@@ -31,13 +31,19 @@ These areas represent the highest combined business impact and frequency.
 ## Dataset
 Olist Brazilian E-Commerce Dataset (Kaggle)
 
----
+## Repository layout
 
-## Project Structure
-- SQL analysis (funnel, revenue leakage, customer pain, segmentation)
-- Dashboard (conversion, operations, customer experience)
-- Priority scoring system to rank issues
-- Recommendation memo
+```
+marketplace-dropoff-priority-analysis/
+├── data/
+│   └── raw/
+├── scripts/
+├── sql/
+├── dashboard/
+├── memo/
+├── assets/
+└── README.md
+```
 
 ---
 
