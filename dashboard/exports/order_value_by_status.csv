@@ -1,0 +1,8 @@
+order_status,orders,total_order_value,avg_order_value
+delivered,96478,15419773.75,159.83
+shipped,1106,177129.34,160.15
+canceled,461,105885.72,229.69
+processing,301,69394.11,230.55
+invoiced,312,68988.75,221.12
+unavailable,6,2140.49,356.75
+approved,2,241.08,120.54

@@ -1,0 +1,5 @@
+delay_bucket,delivered_orders,avg_delivery_days
+on_time,88644,10.88
+8_plus_days_late,3345,42.46
+1_to_3_days_late,2662,21.08
+4_to_7_days_late,1819,26.68

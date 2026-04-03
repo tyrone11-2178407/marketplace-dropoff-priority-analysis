@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketplace Drop-Off, Revenue Leakage, and Operational Friction</title>
+    <meta
+      name="description"
+      content="A Notion-style storytelling case study showing where a marketplace loses customers, revenue, and trust after purchase."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="rail">
+        <div class="rail__inner">
+          <p class="eyebrow">Case Study</p>
+          <h1 class="rail__title">Marketplace Drop-Off</h1>
+          <p class="rail__subtitle">A single story about friction, revenue leakage, and what to fix first.</p>
+          <nav class="rail__nav" aria-label="Section navigation">
+            <a href="#hero">Intro</a>
+            <a href="#health">What’s Happening</a>
+            <a href="#funnel">Funnel Story</a>
+            <a href="#revenue">Revenue Leakage</a>
+            <a href="#pain">Customer Pain</a>
+            <a href="#ops">Operational Concentration</a>
+            <a href="#priority">What to Fix First</a>
+            <a href="#method">Method</a>
+          </nav>
+        </div>
+      </aside>
+
+      <main class="story">
+        <section id="hero" class="section hero reveal">
+          <div class="hero__card">
+            <p class="eyebrow">Marketplace Drop-Off, Revenue Leakage, and Operational Friction</p>
+            <h2 class="hero__headline">
+              The marketplace looks healthy at the surface, but post-purchase friction is quietly eroding value and trust.
+            </h2>
+            <p class="hero__summary">
+              Completion is strong, yet delivery delays and concentrated seller/category pain create a much larger business problem
+              than cancellations alone. This project turns those signals into a prioritized action plan.
+            </p>
+
+            <div class="hero__stats" id="hero-stats"></div>
+          </div>
+        </section>
+
+        <section id="health" class="section reveal">
+          <div class="section__header">
+            <p class="eyebrow">What’s Happening</p>
+            <h2>Healthy at the top line, but fragile underneath</h2>
+            <p>
+              On paper, the marketplace looks fine. Delivered orders dominate. The problem is what happens after purchase:
+              delays, negative reviews, and a smaller but real layer of leakage through cancellations.
+            </p>
+          </div>
+
+          <div class="metric-grid" id="health-kpis"></div>
+
+          <div class="chart-grid chart-grid--two">
+            <article class="chart-card">
+              <div class="chart-card__header">
+                <h3>Order status distribution</h3>
+                <p>Most orders complete, but the tail of friction still matters.</p>
+              </div>
+              <canvas id="statusChart"></canvas>
+            </article>
+
+            <article class="insight-card">
+              <p class="insight-card__label">Why it matters</p>
+              <h3>The business doesn’t have a demand problem first.</h3>
+              <p>
+                A 97.02% completion rate means the real story is downstream. Value is being put at risk after purchase,
+                especially when customers wait too long for delivery.
+              </p>
+              <ul class="insight-list">
+                <li>Completion rate: <strong>97.02%</strong></li>
+                <li>Cancellation rate: <strong>0.63%</strong></li>
+                <li>Low review score rate: <strong>14.69%</strong></li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="funnel" class="section reveal">
+          <div class="section__header">
+            <p class="eyebrow">Funnel Story</p>
+            <h2>This is a post-purchase funnel, not a clickstream funnel</h2>
+            <p>
+              Olist doesn’t have event-level browsing data. Instead, the funnel tracks how orders move from purchase to approval,
+              shipment, delivery, and finally review coverage.
+            </p>
+          </div>
+
+          <div class="chart-grid chart-grid--wide-left">
+            <article class="chart-card">
+              <div class="chart-card__header">
+                <h3>Order journey stages</h3>
+                <p>Purchased to reviewed, using available order records only.</p>
+              </div>
+              <canvas id="funnelChart"></canvas>
+            </article>
+
+            <article class="callout-stack">
+              <div class="callout">
+                <p class="callout__label">Interpretation</p>
+                <p>
+                  Orders largely survive the purchase-to-delivery path, but the reviewed stage drops because not every delivered
+                  order turns into customer feedback.
+                </p>
+              </div>
+              <div class="callout">
+                <p class="callout__label">Caveat</p>
+                <p>
+                  This is intentionally not framed as a product event funnel. The story stays grounded in the tables the dataset
+                  actually contains.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="revenue" class="section reveal">
+          <div class="section__header">
+            <p class="eyebrow">Revenue Leakage</p>
+            <h2>Delayed deliveries put more value at risk than cancellations</h2>
+            <p>
+              Cancellations are visible and easy to blame, but delayed deliveries are the bigger value-at-risk issue in this
+              marketplace. That makes operational reliability a revenue story, not just a customer support story.
+            </p>
+          </div>
+
+          <div class="chart-grid chart-grid--two">
+            <article class="chart-card">
+              <div class="chart-card__header">
+                <h3>Value at risk by issue</h3>
+                <p>Late deliveries are the larger revenue problem, not a secondary operations note.</p>
+              </div>
+              <canvas id="revenueLeakageChart"></canvas>
+            </article>
+
+            <article class="chart-card">
+              <div class="chart-card__header">
+                <h3>Top canceled categories</h3>
+                <p>Cancellation leakage is concentrated in a smaller set of product categories.</p>
+              </div>
+              <canvas id="cancelCategoryChart"></canvas>
+            </article>
+          </div>
+        </section>
+
+        <section id="pain" class="section reveal">
+          <div class="section__header">
+            <p class="eyebrow">Customer Pain</p>
+            <h2>Satisfaction collapses when delivery slips</h2>
+            <p>
+              Review behavior gives the clearest read on customer pain. The strongest pattern in the project is simple:
+              longer delays sharply increase the odds of low scores.
+            </p>
+          </div>
+
+          <div class="chart-grid chart-grid--two">
+            <article class="chart-card">
+              <div class="chart-card__header">
+                <h3>Review distribution</h3>
+                <p>Most reviews are strong, but the negative tail is meaningful.</p>
+              </div>
+              <canvas id="reviewDistributionChart"></canvas>
+            </article>
+
+            <article class="chart-card">
+              <div class="chart-card__header">
+                <h3>Review score by delay bucket</h3>
+                <p>Delays are strongly linked to falling satisfaction.</p>
+              </div>
+              <canvas id="reviewDelayChart"></canvas>
+            </article>
+          </div>
+
+          <article class="insight-banner">
+            <div>
+              <p class="eyebrow">Sharpest signal</p>
+              <h3>On-time orders average 4.29. Orders delayed 8+ days average 1.73.</h3>
+            </div>
+            <p>
+              That gap is the center of the story. Delivery friction is not a soft experience metric here. It is an observable
+              driver of customer pain.
+            </p>
+          </article>
+        </section>
+
+        <section id="ops" class="section reveal">
+          <div class="section__header">
+            <p class="eyebrow">Operational Concentration</p>
+            <h2>The pain is concentrated enough to act on</h2>
+            <p>
+              This is not a marketplace-wide failure. The worst performance is clustered in a smaller group of sellers and
+              categories, which makes intervention more practical.
+            </p>
+          </div>
+
+          <div class="toggle-card">
+            <div class="toggle-card__header">
+              <h3>Concentration explorer</h3>
+              <p class="toggle-card__subtitle">The worst performance clusters in a manageable group of sellers, categories, and states.</p>
+              <div class="toggle-group" role="tablist" aria-label="Operational concentration views">
+                <button class="toggle-group__button is-active" data-ops-view="seller" type="button">Worst Sellers</button>
+                <button class="toggle-group__button" data-ops-view="category" type="button">Late Categories</button>
+                <button class="toggle-group__button" data-ops-view="state" type="button">Canceled Value by State</button>
+              </div>
+            </div>
+            <canvas id="opsChart"></canvas>
+          </div>
+        </section>
+
+        <section id="priority" class="section reveal">
+          <div class="section__header">
+            <p class="eyebrow">What to Fix First</p>
+            <h2>The project ends with a ranked action plan, not a chart dump</h2>
+            <p>
+              The priority system combines impact and frequency to turn findings into action order. It keeps the project focused
+              on business decisions, not just diagnosis.
+            </p>
+          </div>
+
+          <div class="priority-grid" id="priority-cards"></div>
+
+          <article class="priority-table-card">
+            <div class="chart-card__header">
+              <h3>Priority table</h3>
+              <p>Owner and monitoring metric included for each issue.</p>
+            </div>
+            <div class="table-wrap">
+              <table class="priority-table">
+                <thead>
+                  <tr>
+                    <th>Issue</th>
+                    <th>Score</th>
+                    <th>Owner</th>
+                    <th>Metric</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="priority-table-body"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section id="method" class="section reveal">
+          <div class="section__header">
+            <p class="eyebrow">Method + Data Notes</p>
+            <h2>Simple model, grounded assumptions</h2>
+            <p>
+              The analysis stays deliberately practical: SQLite-backed, order-status-based, and focused on the parts of Olist
+              that can support a defensible business case.
+            </p>
+          </div>
+
+          <div class="method-grid">
+            <article class="method-card">
+              <h3>Simple schema</h3>
+              <div class="schema-stack">
+                <div class="schema-pill">customers</div>
+                <span class="schema-arrow">→</span>
+                <div class="schema-pill">orders</div>
+                <span class="schema-arrow">→</span>
+                <div class="schema-pill">order_items</div>
+                <span class="schema-arrow">→</span>
+                <div class="schema-pill">products</div>
+              </div>
+              <div class="schema-stack">
+                <div class="schema-pill">orders</div>
+                <span class="schema-arrow">→</span>
+                <div class="schema-pill">payments</div>
+              </div>
+              <div class="schema-stack">
+                <div class="schema-pill">orders</div>
+                <span class="schema-arrow">→</span>
+                <div class="schema-pill">reviews</div>
+              </div>
+              <div class="schema-stack">
+                <div class="schema-pill">order_items</div>
+                <span class="schema-arrow">→</span>
+                <div class="schema-pill">sellers</div>
+              </div>
+            </article>
+
+            <article class="method-card">
+              <h3>Important caveats</h3>
+              <ul class="method-list">
+                <li>The funnel is order-status based, not clickstream based.</li>
+                <li>Repeat purchase is a proxy using <code>customer_unique_id</code>.</li>
+                <li>Refunds are approximated through cancellations and dissatisfaction, not direct refund tables.</li>
+                <li>The project uses static data and a plain HTML/CSS/JS frontend for GitHub Pages portability.</li>
+              </ul>
+            </article>
+
+            <article class="method-card">
+              <h3>Workflow</h3>
+              <ul class="method-list">
+                <li>CSV files are loaded into SQLite.</li>
+                <li>SQL workstreams produce validated summary outputs.</li>
+                <li>Those outputs are converted into static frontend data.</li>
+                <li>The presentation layer is a storytelling microsite, not a BI dashboard.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <footer class="footer reveal">
+          <p class="eyebrow">Portfolio Project</p>
+          <h2>Marketplace Drop-Off, Revenue Leakage, and Operational Friction</h2>
+          <p>
+            Built from the Olist Brazilian E-Commerce dataset with Python, SQLite, SQL, and a static storytelling frontend.
+          </p>
+          <p class="footer__close">
+            The main takeaway is simple: the marketplace does not need broader reporting first. It needs tighter delivery execution,
+            more seller accountability, and earlier intervention in the highest-friction segments.
+          </p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

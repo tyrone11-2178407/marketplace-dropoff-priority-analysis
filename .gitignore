@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+data/olist.db
+.DS_Store
+.Rhistory

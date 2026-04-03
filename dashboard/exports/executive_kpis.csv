@@ -1,0 +1,2 @@
+total_orders,completion_rate_pct,cancellation_rate_pct,late_delivery_rate_pct,avg_review_score,low_review_rate_pct,canceled_order_value,delayed_order_value
+99441,97.02,0.63,8.11,4.09,14.69,105885.72,1351624.96

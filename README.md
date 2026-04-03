@@ -1,55 +1,85 @@
 # Marketplace Drop-Off, Revenue Leakage, and Operational Friction
 
 ## Overview
-This project analyzes a digital marketplace to identify where the business is losing customers and revenue, and how operational issues impact customer experience.
+This project is a frontend-first marketplace case study built on the Olist Brazilian E-Commerce dataset. It investigates where the business loses revenue and customer trust after purchase, then turns those findings into a ranked action plan. The finished deliverable is an interactive storytelling site in `docs/`, supported by SQL analysis, a recommendation memo, and lightweight project documentation.
 
-The goal is to move beyond basic analysis and answer:
-- Where are users dropping off?
-- What issues are causing revenue loss?
-- What should the company fix first?
+## Why This Matters
+The marketplace does not have a top-line demand problem first. Order completion is strong, but post-purchase friction is still eroding value:
+- completion rate: `97.02%`
+- cancellation rate: `0.63%`
+- late delivery rate: `8.11%`
+- delayed order value at risk: `1,351,624.96`
 
----
+That makes the project useful for product, analytics, and operations roles at the same time. It connects metrics to customer pain, operational bottlenecks, and concrete business recommendations.
 
-## Key Insights
-- Order cancellations and delivery delays are major sources of revenue leakage
-- Customer dissatisfaction is strongly associated with delayed deliveries
-- A small number of segments (categories/sellers) drive a disproportionate share of issues
+## Frontend Preview
+The main portfolio artifact is the static storytelling frontend in [`docs/`](docs/). It is designed for GitHub Pages and walks through:
+- marketplace health
+- post-purchase funnel performance
+- revenue leakage
+- delivery-driven customer pain
+- concentrated seller and category friction
+- a final priority system for what the business should fix first
 
----
+Local preview:
 
-## Priority Recommendations
-Using a simple scoring system (impact × frequency), the top issues to fix are:
+```bash
+python3 -m http.server 8000
+```
 
-1. Late delivery
-2. Order cancellations
-3. Low-performing seller segments
+Then open `http://localhost:8000/docs/`
 
-These areas represent the highest combined business impact and frequency.
+## Key Findings
+- Most orders complete, but post-purchase friction still creates meaningful business risk.
+- Late deliveries are the biggest visible source of value at risk, far outweighing canceled-order value.
+- Customer satisfaction drops sharply as delivery delays increase, from `4.29` for on-time orders to `1.73` for orders delayed `8+` days.
+- Pain is concentrated enough to act on: a smaller set of sellers and categories drives a disproportionate share of late deliveries and low reviews.
 
----
+## Recommendation Summary
+1. Improve delivery reliability in the highest-friction seller and category segments first.
+2. Add tighter seller operational controls for repeat late-delivery offenders.
+3. Monitor cancellation leakage, category pain, and payment-related friction with recurring segment-level reporting.
 
-## Dataset
-Olist Brazilian E-Commerce Dataset (Kaggle)
+## Repo Guide
+```text
+marketplace-dropoff-priority-analysis/
+├── docs/                    # Primary portfolio frontend for GitHub Pages
+├── sql/                     # Analysis workstreams and priority system
+├── scripts/                 # SQLite load + SQL runner helpers
+├── memo/                    # Recommendation memo
+├── dashboard/               # Archived export/query artifacts from earlier dashboard workflow
+├── project_brief.md         # Business framing
+├── schema_diagram.md        # Simple schema notes
+└── README.md
+```
 
----
+## Technical Workflow
+This repo uses a simple Python + SQLite workflow:
+- `scripts/load_csv_to_sqlite.py` loads raw Olist CSVs into `data/olist.db`
+- `scripts/run_sql.py` runs saved SQL files from `sql/`
+- SQL outputs were shaped into static frontend data for the `docs/` site
+- the project does not depend on a VS Code database extension or a live BI connection
 
-## Project Structure
-- SQL analysis (funnel, revenue leakage, customer pain, segmentation)
-- Dashboard (conversion, operations, customer experience)
-- Priority scoring system to rank issues
-- Recommendation memo
+Example:
 
----
+```bash
+python3 scripts/run_sql.py sql/datachecks.sql
+python3 scripts/run_sql.py sql/priority_system.sql
+```
 
-## Business Impact
-This project demonstrates how data can be used to:
-- Identify revenue leakage
-- Improve customer experience
-- Prioritize operational and product improvements
+## Supporting Assets
+- [`project_brief.md`](project_brief.md) explains the business question and goals
+- [`schema_diagram.md`](schema_diagram.md) documents the lightweight schema used in the analysis
+- [`memo/recommendation_memo.md`](memo/recommendation_memo.md) summarizes the business recommendations
+- [`sql/`](sql/) contains the analysis workstreams behind the story
 
----
+## Tools
+- Python
+- SQLite
+- pandas
+- SQL
+- plain HTML, CSS, and JavaScript
+- Chart.js
 
-## Next Steps
-- Implement monitoring for high-risk segments
-- Improve delivery transparency
-- Investigate seller-level performance issues
+## Publish Notes
+The repo is set up for GitHub Pages publishing from `docs/`. Keep asset paths relative and keep `docs/.nojekyll` in place when publishing.

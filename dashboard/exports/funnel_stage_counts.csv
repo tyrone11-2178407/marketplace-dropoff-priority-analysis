@@ -1,0 +1,6 @@
+funnel_stage,stage_order,orders
+purchased,1,99441
+approved,2,99281
+shipped,3,97658
+delivered,4,96476
+reviewed,5,95830
