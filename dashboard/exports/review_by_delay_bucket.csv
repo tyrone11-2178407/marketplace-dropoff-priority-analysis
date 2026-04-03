@@ -1,0 +1,5 @@
+delay_bucket,orders,avg_review_score,low_review_rate_pct
+on_time,88644,4.29,9.23
+8_plus_days_late,3345,1.73,78.33
+1_to_3_days_late,2662,3.77,19.12
+4_to_7_days_late,1819,2.32,61.34

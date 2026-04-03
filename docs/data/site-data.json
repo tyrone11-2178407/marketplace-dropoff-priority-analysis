@@ -1,0 +1,304 @@
+{
+  "kpis": {
+    "total_orders": 99441,
+    "completion_rate_pct": 97.02,
+    "cancellation_rate_pct": 0.63,
+    "late_delivery_rate_pct": 8.11,
+    "avg_review_score": 4.09,
+    "low_review_rate_pct": 14.69,
+    "canceled_order_value": 105885.72,
+    "delayed_order_value": 1351624.96
+  },
+  "orderStatus": [
+    { "order_status": "delivered", "order_status_label": "Delivered", "orders": 96478, "share_of_orders_pct": 97.02 },
+    { "order_status": "shipped", "order_status_label": "Shipped", "orders": 1107, "share_of_orders_pct": 1.11 },
+    { "order_status": "canceled", "order_status_label": "Canceled", "orders": 625, "share_of_orders_pct": 0.63 },
+    { "order_status": "unavailable", "order_status_label": "Unavailable", "orders": 609, "share_of_orders_pct": 0.61 },
+    { "order_status": "invoiced", "order_status_label": "Invoiced", "orders": 314, "share_of_orders_pct": 0.32 },
+    { "order_status": "processing", "order_status_label": "Processing", "orders": 301, "share_of_orders_pct": 0.3 },
+    { "order_status": "created", "order_status_label": "Created", "orders": 5, "share_of_orders_pct": 0.01 },
+    { "order_status": "approved", "order_status_label": "Approved", "orders": 2, "share_of_orders_pct": 0.0 }
+  ],
+  "funnel": [
+    { "funnel_stage": "purchased", "funnel_stage_label": "Purchased", "stage_order": 1, "orders": 99441 },
+    { "funnel_stage": "approved", "funnel_stage_label": "Approved", "stage_order": 2, "orders": 99281 },
+    { "funnel_stage": "shipped", "funnel_stage_label": "Shipped", "stage_order": 3, "orders": 97658 },
+    { "funnel_stage": "delivered", "funnel_stage_label": "Delivered", "stage_order": 4, "orders": 96476 },
+    { "funnel_stage": "reviewed", "funnel_stage_label": "Reviewed", "stage_order": 5, "orders": 95830 }
+  ],
+  "revenueLeakage": [
+    { "issue": "canceled_orders", "issue_label": "Canceled orders", "value_at_risk": 105885.72, "share_of_total_value_pct": 0.67 },
+    { "issue": "late_deliveries", "issue_label": "Late deliveries", "value_at_risk": 1351624.96, "share_of_total_value_pct": 8.53 }
+  ],
+  "canceledByCategory": [
+    {
+      "product_category": "cool_stuff",
+      "product_category_label": "Cool Stuff",
+      "product_category_full_label": "Cool Stuff",
+      "canceled_orders": 15,
+      "canceled_order_value": 15153.48
+    },
+    {
+      "product_category": "esporte_lazer",
+      "product_category_label": "Sports & Leisure",
+      "product_category_full_label": "Sports & Leisure",
+      "canceled_orders": 47,
+      "canceled_order_value": 9411.85
+    },
+    {
+      "product_category": "informatica_acessorios",
+      "product_category_label": "Tech Accessories",
+      "product_category_full_label": "Informatica Acessorios",
+      "canceled_orders": 35,
+      "canceled_order_value": 8330.82
+    },
+    {
+      "product_category": "relogios_presentes",
+      "product_category_label": "Watches & Gifts",
+      "product_category_full_label": "Relogios Presentes",
+      "canceled_orders": 20,
+      "canceled_order_value": 7249.14
+    },
+    {
+      "product_category": "automotivo",
+      "product_category_label": "Automotive",
+      "product_category_full_label": "Automotive",
+      "canceled_orders": 24,
+      "canceled_order_value": 6731.72
+    },
+    {
+      "product_category": "utilidades_domesticas",
+      "product_category_label": "Home Utilities",
+      "product_category_full_label": "Utilidades Domesticas",
+      "canceled_orders": 37,
+      "canceled_order_value": 6362.63
+    },
+    {
+      "product_category": "ferramentas_jardim",
+      "product_category_label": "Garden Tools",
+      "product_category_full_label": "Ferramentas Jardim",
+      "canceled_orders": 13,
+      "canceled_order_value": 4694.01
+    },
+    {
+      "product_category": "brinquedos",
+      "product_category_label": "Toys",
+      "product_category_full_label": "Toys",
+      "canceled_orders": 31,
+      "canceled_order_value": 4589.26
+    }
+  ],
+  "reviewDistribution": [
+    { "review_score": 1, "review_score_label": "Score 1", "review_count": 11424, "share_of_reviews_pct": 11.51 },
+    { "review_score": 2, "review_score_label": "Score 2", "review_count": 3151, "share_of_reviews_pct": 3.18 },
+    { "review_score": 3, "review_score_label": "Score 3", "review_count": 8179, "share_of_reviews_pct": 8.24 },
+    { "review_score": 4, "review_score_label": "Score 4", "review_count": 19142, "share_of_reviews_pct": 19.29 },
+    { "review_score": 5, "review_score_label": "Score 5", "review_count": 57328, "share_of_reviews_pct": 57.78 }
+  ],
+  "reviewByDelay": [
+    {
+      "delay_bucket": "on_time",
+      "delay_bucket_label": "On Time",
+      "orders": 88644,
+      "avg_review_score": 4.29,
+      "low_review_rate_pct": 9.23
+    },
+    {
+      "delay_bucket": "1_to_3_days_late",
+      "delay_bucket_label": "1 to 3 Days Late",
+      "orders": 2662,
+      "avg_review_score": 3.77,
+      "low_review_rate_pct": 19.12
+    },
+    {
+      "delay_bucket": "4_to_7_days_late",
+      "delay_bucket_label": "4 to 7 Days Late",
+      "orders": 1819,
+      "avg_review_score": 2.32,
+      "low_review_rate_pct": 61.34
+    },
+    {
+      "delay_bucket": "8_plus_days_late",
+      "delay_bucket_label": "8+ Days Late",
+      "orders": 3345,
+      "avg_review_score": 1.73,
+      "low_review_rate_pct": 78.33
+    }
+  ],
+  "lateDeliveryBySeller": [
+    {
+      "seller_id": "54965bbe3e4f07ae045b90b0b8541f52",
+      "seller_label": "Seller 01",
+      "seller_full_label": "Seller 01 · 54965bbe3e4f07ae045b90b0b8541f52",
+      "delivered_orders": 73,
+      "late_delivery_rate_pct": 30.14
+    },
+    {
+      "seller_id": "a49928bcdf77c55c6d6e05e09a9b4ca5",
+      "seller_label": "Seller 02",
+      "seller_full_label": "Seller 02 · a49928bcdf77c55c6d6e05e09a9b4ca5",
+      "delivered_orders": 96,
+      "late_delivery_rate_pct": 26.04
+    },
+    {
+      "seller_id": "beadbee30901a7f61d031b6b686095ad",
+      "seller_label": "Seller 03",
+      "seller_full_label": "Seller 03 · beadbee30901a7f61d031b6b686095ad",
+      "delivered_orders": 64,
+      "late_delivery_rate_pct": 25.0
+    },
+    {
+      "seller_id": "06a2c3af7b3aee5d69171b0e14f0ee87",
+      "seller_label": "Seller 04",
+      "seller_full_label": "Seller 04 · 06a2c3af7b3aee5d69171b0e14f0ee87",
+      "delivered_orders": 389,
+      "late_delivery_rate_pct": 23.14
+    },
+    {
+      "seller_id": "cac4c8e7b1ca6252d8f20b2fc1a2e4af",
+      "seller_label": "Seller 05",
+      "seller_full_label": "Seller 05 · cac4c8e7b1ca6252d8f20b2fc1a2e4af",
+      "delivered_orders": 74,
+      "late_delivery_rate_pct": 22.97
+    },
+    {
+      "seller_id": "1ca7077d890b907f89be8c954a02686a",
+      "seller_label": "Seller 06",
+      "seller_full_label": "Seller 06 · 1ca7077d890b907f89be8c954a02686a",
+      "delivered_orders": 108,
+      "late_delivery_rate_pct": 22.22
+    },
+    {
+      "seller_id": "6039e27294dc75811c0d8a39069f52c0",
+      "seller_label": "Seller 07",
+      "seller_full_label": "Seller 07 · 6039e27294dc75811c0d8a39069f52c0",
+      "delivered_orders": 63,
+      "late_delivery_rate_pct": 22.22
+    },
+    {
+      "seller_id": "712e6ed8aa4aa1fa65dab41fed5737e4",
+      "seller_label": "Seller 08",
+      "seller_full_label": "Seller 08 · 712e6ed8aa4aa1fa65dab41fed5737e4",
+      "delivered_orders": 77,
+      "late_delivery_rate_pct": 22.08
+    }
+  ],
+  "lateDeliveryByCategory": [
+    {
+      "product_category": "audio",
+      "product_category_label": "Audio",
+      "product_category_full_label": "Audio",
+      "delivered_orders": 348,
+      "late_delivery_rate_pct": 12.93
+    },
+    {
+      "product_category": "livros_tecnicos",
+      "product_category_label": "Technical Books",
+      "product_category_full_label": "Livros Tecnicos",
+      "delivered_orders": 256,
+      "late_delivery_rate_pct": 10.94
+    },
+    {
+      "product_category": "casa_conforto",
+      "product_category_label": "Home Comfort",
+      "product_category_full_label": "Casa Conforto",
+      "delivered_orders": 392,
+      "late_delivery_rate_pct": 10.46
+    },
+    {
+      "product_category": "alimentos",
+      "product_category_label": "Food",
+      "product_category_full_label": "Food",
+      "delivered_orders": 441,
+      "late_delivery_rate_pct": 9.98
+    },
+    {
+      "product_category": "eletronicos",
+      "product_category_label": "Electronics",
+      "product_category_full_label": "Electronics",
+      "delivered_orders": 2517,
+      "late_delivery_rate_pct": 9.81
+    },
+    {
+      "product_category": "bebes",
+      "product_category_label": "Baby",
+      "product_category_full_label": "Baby",
+      "delivered_orders": 2809,
+      "late_delivery_rate_pct": 9.18
+    },
+    {
+      "product_category": "moveis_escritorio",
+      "product_category_label": "Office Furniture",
+      "product_category_full_label": "Moveis Escritorio",
+      "delivered_orders": 1254,
+      "late_delivery_rate_pct": 9.17
+    },
+    {
+      "product_category": "unknown",
+      "product_category_label": "Unknown Category",
+      "product_category_full_label": "Unknown Category",
+      "delivered_orders": 1392,
+      "late_delivery_rate_pct": 9.12
+    }
+  ],
+  "canceledByState": [
+    { "seller_state": "SP", "seller_state_label": "SP", "canceled_orders": 332, "canceled_order_value": 72638.43 },
+    { "seller_state": "MG", "seller_state_label": "MG", "canceled_orders": 50, "canceled_order_value": 10889.56 },
+    { "seller_state": "SC", "seller_state_label": "SC", "canceled_orders": 17, "canceled_order_value": 8040.59 },
+    { "seller_state": "RJ", "seller_state_label": "RJ", "canceled_orders": 21, "canceled_order_value": 6311.87 },
+    { "seller_state": "PR", "seller_state_label": "PR", "canceled_orders": 26, "canceled_order_value": 5802.18 },
+    { "seller_state": "RS", "seller_state_label": "RS", "canceled_orders": 6, "canceled_order_value": 926.97 }
+  ],
+  "priority": [
+    {
+      "issue": "Late Delivery",
+      "impact_score": 5,
+      "frequency_score": 4,
+      "priority_score": 20,
+      "effort": "Medium",
+      "owner": "Logistics / Ops",
+      "metric_to_monitor": "late_delivery_rate_pct",
+      "recommended_action": "Prioritize the worst seller and category lanes, tighten delivery SLAs, and monitor late-delivery exceptions weekly."
+    },
+    {
+      "issue": "Seller Friction",
+      "impact_score": 3,
+      "frequency_score": 4,
+      "priority_score": 12,
+      "effort": "Medium",
+      "owner": "Seller Operations",
+      "metric_to_monitor": "seller_late_delivery_rate_pct",
+      "recommended_action": "Set seller scorecards, trigger escalation for repeat offenders, and route operational coaching to the worst-performing sellers."
+    },
+    {
+      "issue": "Category Friction",
+      "impact_score": 3,
+      "frequency_score": 3,
+      "priority_score": 9,
+      "effort": "Medium",
+      "owner": "Logistics / Ops",
+      "metric_to_monitor": "category_low_review_rate_pct",
+      "recommended_action": "Audit the highest-pain categories for packaging, lead-time expectations, and fulfillment reliability before scaling volume."
+    },
+    {
+      "issue": "Cancellations",
+      "impact_score": 4,
+      "frequency_score": 2,
+      "priority_score": 8,
+      "effort": "Medium",
+      "owner": "Seller Operations",
+      "metric_to_monitor": "cancellation_rate_pct",
+      "recommended_action": "Review the highest-value canceled categories and sellers first, then add early-warning checks for inventory and fulfillment breakdowns."
+    },
+    {
+      "issue": "Payment Friction",
+      "impact_score": 2,
+      "frequency_score": 2,
+      "priority_score": 4,
+      "effort": "Low",
+      "owner": "Product / Checkout",
+      "metric_to_monitor": "payment_type_low_review_rate_pct",
+      "recommended_action": "Monitor the highest-friction payment type and review checkout messaging, refund expectations, and support playbooks."
+    }
+  ]
+}

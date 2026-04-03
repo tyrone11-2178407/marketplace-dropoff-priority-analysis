@@ -1,0 +1,6 @@
+issue,impact_score,frequency_score,priority_score,effort,owner,metric_to_monitor,recommended_action
+"Late delivery",5,4,20,Medium,"Logistics / Ops",late_delivery_rate_pct,"Prioritize the worst seller and category lanes, tighten delivery SLAs, and monitor late-delivery exceptions weekly."
+"Seller friction",3,4,12,Medium,"Seller Operations",seller_late_delivery_rate_pct,"Set seller scorecards, trigger escalation for repeat offenders, and route operational coaching to the worst-performing sellers."
+"Category friction",3,3,9,Medium,"Logistics / Ops",category_low_review_rate_pct,"Audit the highest-pain categories for packaging, lead-time expectations, and fulfillment reliability before scaling volume."
+Cancellations,4,2,8,Medium,"Seller Operations",cancellation_rate_pct,"Review the highest-value canceled categories and sellers first, then add early-warning checks for inventory and fulfillment breakdowns."
+"Payment friction",2,2,4,Low,"Product / Checkout",payment_type_low_review_rate_pct,"Monitor the highest-friction payment type and review checkout messaging, refund expectations, and support playbooks."
