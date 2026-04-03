@@ -1,5 +1,8 @@
 # Marketplace Drop-Off, Revenue Leakage, and Operational Friction
 
+## Live Site
+[View the published case study](https://tyrone11-2178407.github.io/marketplace-dropoff-priority-analysis/)
+
 ## Overview
 This project is a frontend-first marketplace case study built on the Olist Brazilian E-Commerce dataset. It investigates where the business loses revenue and customer trust after purchase, then turns those findings into a ranked action plan. The finished deliverable is an interactive storytelling site in `docs/`, supported by SQL analysis, a recommendation memo, and lightweight project documentation.
 
